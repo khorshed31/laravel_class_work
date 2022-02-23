@@ -11,6 +11,7 @@ class Student extends Model
     use HasFactory;
 
     protected $student;
+
     public function newStudent(){
 
         $this->student = new Student();
