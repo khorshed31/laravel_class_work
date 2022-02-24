@@ -15,7 +15,15 @@ use App\Http\Controllers\BlogController;
 */
 
 Route::get('/', [StudentController::class, 'index'])->name('home');
-Route::get('/add-blog', [BlogController::class, 'index'])->name('add-blog');
+Route::get('/manage-student', [StudentController::class, 'manage'])->name('manage-student');
+Route::get('/edit-student/{id}', [StudentController::class, 'edit'])->name('edit-student');
 Route::post('/new-student', [StudentController::class, 'create'])->name('new-student');
+Route::post('/update-student/{id}', [StudentController::class, 'update'])->name('update-student');
+Route::post('/delete-student/{id}', [StudentController::class, 'delete'])->name('delete-student');
+
+Route::get('/add-blog', [BlogController::class, 'index'])->name('add-blog');
+Route::get('/manage-blog', [BlogController::class, 'manage'])->name('manage-blog');
+Route::get('/edit-blog/{id}', [BlogController::class, 'edit'])->name('edit-blog');
 Route::post('/new-blog', [BlogController::class, 'createBlog'])->name('new-blog');
+Route::post('/update-blog/{id}', [BlogController::class, 'update'])->name('update-blog');
 
