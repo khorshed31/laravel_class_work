@@ -30,5 +30,8 @@ Route::post('/update-blog/{id}', [BlogController::class, 'update'])->name('updat
 
 Route::get('/add-product', [ProductController::class, 'index'])->name('add-product');
 Route::get('/manage-product', [ProductController::class, 'manage'])->name('manage-product');
+Route::get('/edit-product/{id}', [ProductController::class, 'edit'])->name('edit-product');
+Route::post('/update-product/{id}', [ProductController::class, 'update'])->name('update-product');
+Route::post('/delete-product/{id}', [ProductController::class, 'delete'])->name('delete-product');
 Route::post('/new-product', [ProductController::class, 'create'])->name('new-product');
 

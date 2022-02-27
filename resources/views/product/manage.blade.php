@@ -39,13 +39,13 @@
                                         <td>{{ $product->description }}</td>
                                         <td>{{ $product->image }}</td>
                                         <td>
-                                            <a href="{{ route('edit-product', ['id' => $product->id]) }}" class="btn btn-dark btn-sm">
-                                                <i class="fa fa-edit"></i>
+                                            <a href="{{ route('edit-product', ['id' => $product->id]) }}">
+                                                <i class="fa fa-edit text-dark"></i>
                                             </a>
-                                            <a href="" class="btn btn-danger btn-sm" onclick="deleteProduct({{ $product->id }})">
-                                                <i class="fa fa-trash"></i>
+                                            <a href="" onclick="deleteProduct({{ $product->id }})">
+                                                <i class="fa fa-trash text-danger"></i>
                                             </a>
-                                            <form action="{{ route('delete-product', ['id' => $product->id]) }}" id="deleteStudentForm{{ $product->id }}" method="POST">
+                                            <form action="{{ route('delete-product', ['id' => $product->id]) }}" id="deleteProductForm{{ $product->id }}" method="POST">
                                                 @csrf
                                             </form>
                                         </td>
@@ -61,17 +61,17 @@
         </div>
     </section>
 
-{{--    <script>--}}
+    <script>
 
-{{--        function deleteProduct(id) {--}}
+        function deleteProduct(id) {
 
-{{--            event.preventDefault();--}}
-{{--            var check = confirm('Are you sure to delete this..');--}}
-{{--            if (check){--}}
-{{--                document.getElementById('deleteStudentForm'+id).submit();--}}
-{{--            }--}}
-{{--        }--}}
+            event.preventDefault();
+            var check = confirm('Are you sure to delete this..');
+            if (check){
+                document.getElementById('deleteProductForm'+id).submit();
+            }
+        }
 
-{{--    </script>--}}
+    </script>
 @endsection
 
