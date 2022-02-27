@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,4 +27,8 @@ Route::get('/manage-blog', [BlogController::class, 'manage'])->name('manage-blog
 Route::get('/edit-blog/{id}', [BlogController::class, 'edit'])->name('edit-blog');
 Route::post('/new-blog', [BlogController::class, 'createBlog'])->name('new-blog');
 Route::post('/update-blog/{id}', [BlogController::class, 'update'])->name('update-blog');
+
+Route::get('/add-product', [ProductController::class, 'index'])->name('add-product');
+Route::get('/manage-product', [ProductController::class, 'manage'])->name('manage-product');
+Route::post('/new-product', [ProductController::class, 'create'])->name('new-product');
 
