@@ -23,6 +23,10 @@ class ProductController extends Controller
         $this->product->brand  = $request->brand;
         $this->product->price  = $request->price;
         $this->product->description  = $request->description;
+        $image = $request->file('image');
+        $imageName = $image->getClientOriginalName();
+        $directory = 'product-image/';
+        $image->move($directory,$imageName);
         $this->product->image  = $request->image;
         $this->product->save();
 
