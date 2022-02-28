@@ -51,6 +51,7 @@
                                     <label class="col-md-3 col-form-label">Product Image</label>
                                     <div class="col-md-9">
                                         <input type="file" class="form-control-file" name="image"/>
+                                        <img src="{{ asset($product->image) }}" alt="" height="100" width="150">
                                     </div>
                                 </div>
                                 <div class="form-group row">

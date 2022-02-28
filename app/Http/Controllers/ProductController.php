@@ -16,20 +16,7 @@ class ProductController extends Controller
 
     public function create(Request $request){
 
-        $this->product = new Product();
-
-        $this->product->name    = $request->name;
-        $this->product->category   = $request->category;
-        $this->product->brand  = $request->brand;
-        $this->product->price  = $request->price;
-        $this->product->description  = $request->description;
-        $image = $request->file('image');
-        $imageName = $image->getClientOriginalName();
-        $directory = 'product-image/';
-        $image->move($directory,$imageName);
-        $this->product->image  = $request->image;
-        $this->product->save();
-
+        Product::newProduct($request);
         return redirect()->back()->with('message', 'Product Add Successfully');
     }
 
@@ -46,16 +33,7 @@ class ProductController extends Controller
 
     public function update(Request $request, $id){
 
-        $this->product = Product::find($id);
-
-        $this->product->name    = $request->name;
-        $this->product->category   = $request->category;
-        $this->product->brand  = $request->brand;
-        $this->product->price  = $request->price;
-        $this->product->description  = $request->description;
-        $this->product->image  = $request->image;
-        $this->product->save();
-
+        Product::updateProduct($request,$id);
         return redirect('/manage-product')->with('message', 'Product Updated Successfully');
     }
 

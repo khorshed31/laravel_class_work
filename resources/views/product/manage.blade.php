@@ -37,7 +37,7 @@
                                         <td>{{ $product->brand }}</td>
                                         <td>{{ $product->price }}</td>
                                         <td>{{ $product->description }}</td>
-                                        <td>{{ $product->image }}</td>
+                                        <td><img src="{{ asset($product->image) }}" alt="" height="100" width="120"></td>
                                         <td>
                                             <a href="{{ route('edit-product', ['id' => $product->id]) }}">
                                                 <i class="fa fa-edit text-dark"></i>
