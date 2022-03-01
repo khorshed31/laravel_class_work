@@ -15,7 +15,7 @@
                         </div>
                         <div class="card-body">
                             <h4 class="text-warning text-center">{{ Session::get('message') }}</h4>
-                            <form action="{{ route('update-product', ['id' => $product->id]) }}" method="POST">
+                            <form action="{{ route('update-product', ['id' => $product->id]) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group row">
                                     <label class="col-md-3 col-form-label">Product Name</label>

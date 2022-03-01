@@ -28,7 +28,7 @@ class Product extends Model
         self::saveBasicInfo(self::$product, $request, self::getImageUrl($request));
     }
 
-    public static function updateProduct($request,$id){
+    public static function updateProduct($request, $id){
 
         self::$product = Product::find($id);
 
@@ -49,12 +49,12 @@ class Product extends Model
     }
     private static function saveBasicInfo($product, $request, $imageUrl){
 
-        self::$product->name    = $request->name;
-        self::$product->category   = $request->category;
-        self::$product->brand  = $request->brand;
-        self::$product->price  = $request->price;
-        self::$product->description  = $request->description;
-        self::$product->image  = $imageUrl;
-        self::$product->save();
+        $product->name    = $request->name;
+        $product->category   = $request->category;
+        $product->brand  = $request->brand;
+        $product->price  = $request->price;
+        $product->description  = $request->description;
+        $product->image  = $imageUrl;
+        $product->save();
     }
 }
